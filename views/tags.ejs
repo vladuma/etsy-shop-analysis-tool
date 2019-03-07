@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <% include ./partials/head %>
+    <script>
+      var result = <%- JSON.stringify(result) %>;
+    </script>
+    <script type="text/javascript" src="/javascripts/tags-analysis.js"></script>
+  </head>
+  <body>
+    <% include ./partials/nav-menu %>
+    <main>
+      <% include ./sections %>
+      <section>
+        <div id="all-tags" class="row">
+        </div>
+      </section>
+    </main>
+    <ul style="display: none">
+      <% result.forEach(function(listing) { %>
+        <li data-section="<%= listing.shop_section_id %>"><%= listing.tags.join(', ') %></li>
+      <% }); %>
+    </ul>
+    <% include ./partials/footer %>
+  </body>
+</html>

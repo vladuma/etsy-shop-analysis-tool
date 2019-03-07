@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <% include ./partials/head %>
+  </head>
+  <body>
+    <% include ./partials/nav-menu %>
+    <main>
+      <div class="flex-container">
+        <div id="all-listings" class="row">
+          <% result.forEach(function(listing) { %>
+            <div class="col-md-3 listing-card">
+              <img src="<%= includes=listing.Images[0].url_570xN %>" alt="">
+              <div>
+                <h6><%= listing.title %></h6>
+                <p>
+                  <i>
+                    <a href="<%= listing.url %>">
+                      <%= listing.listing_id %>
+                    </a>
+                  </i>
+                </p>
+              </div>
+            </div>
+          <% }); %>
+        </div>
+      </div>
+    </main>
+    <% include ./partials/footer %>
+  </body>
+</html>
