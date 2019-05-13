@@ -11,7 +11,7 @@ const baseURL = 'https://openapi.etsy.com/v2/',
       shopSearch = '/shops/',
       shopID = 19310367,
       listings = '/listings/active'
-      API = '?api_key=98x1v3mp8pf7hh4tyzbs1dv2';
+      API = APIKEY;
 
 let URL = baseURL + shopSearch + shopID + listings + API;
 
